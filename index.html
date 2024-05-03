@@ -64,8 +64,12 @@
         // Create featurelayer from feature service 
         const layer = new FeatureLayer({ 
           // URL to the service 
-          url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/survey123_9b2a89d686d1425daf4d23176c957309_results/FeatureServer"
-        //Your item URL Goes Here
+          url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/survey123_9b2a89d686d1425daf4d23176c957309_results/FeatureServer",
+        outFields: ['Describe the rock'],
+        popupTemplate: {
+        title: "{Name}",
+        content: "Description: {Describe the rock}"
+      }
         });
 
         map.add(layer);
